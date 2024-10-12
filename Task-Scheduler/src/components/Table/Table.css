@@ -1,0 +1,67 @@
+/* Container to allow overflow for smaller screens */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .table {
+    width: 95%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .table th, .table td {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #403535;
+    color: white;
+  }
+  
+  .table td {
+    background-color: #fff;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .table-container {
+      padding: 0 1rem;
+    }
+  
+    /* Display table as block on smaller screens */
+    .table {
+      display: block;
+      width: 100%;
+    }
+  
+   
+  
+    .table tbody tr {
+      display: block;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ccc;
+    }
+  
+    .table tbody tr td {
+      display: block;
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+    }
+  
+    .table tbody tr td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      padding-left: 1rem;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+  
+  /* You can style other parts as needed */
+  
