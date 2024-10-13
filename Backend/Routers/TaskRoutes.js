@@ -1,14 +1,37 @@
 import express from "express";
-import { CreateTask, editTask, deleteTask, getAllTask, getTaskById, stopTask,startTask} from "../Controllers/TaskController.js";
+import { 
+    CreateTask, 
+    editTask, 
+    deleteTask, 
+    getAllTask, 
+    getTaskById, 
+    stopTask,
+    startTask
+} from "../Controllers/TaskController.js";
 
-const router =express.Router();
-console.log('server running till here ')
+const router = express.Router();
 
+// Create a new task
 router.post("/createTask", CreateTask);
+
+// Edit an existing task
 router.put("/editTask", editTask);
+
+// Delete a task
 router.post("/deleteTask", deleteTask);
+
+// Get all tasks
 router.get("/getAllTasks", getAllTask);
-router.get("/getTaskById", getTaskById);
+
+// Get a task by ID
+router.get("/getTaskById/:id", getTaskById);
+
+// Stop a task
 router.post("/stopTask", stopTask);
+
+// Start/Activate a task
 router.post("/startTask", startTask);
+
+
+
 export default router;
